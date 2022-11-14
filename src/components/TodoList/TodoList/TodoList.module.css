@@ -6,7 +6,24 @@
     min-height: 0;
 }
 
+.reset{
+    color: var(--color-text);
+    background-color: transparent;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    
+}
+
+.reset:hover{
+    color: var(--color-accent);
+}
+
 .list{
     flex: 1 1 auto;
     overflow-y: auto;
 }
+

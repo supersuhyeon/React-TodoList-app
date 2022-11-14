@@ -3,6 +3,7 @@ import { useState } from "react"
 import AddTodo from "../AddTodo/AddTodo"
 import Todo from "../Todo/Todo"
 import styles from './TodoList.module.css'
+import {VscDebugRestart} from 'react-icons/vsc'
 
 
 export default function TodoList({filter}){
@@ -26,10 +27,17 @@ export default function TodoList({filter}){
         setTodos(todos.filter((t) => t.id !== deleted.id))
     }
 
+    const AllHandleDelete = ()=>{
+        setTodos(()=>{return []})
+    }
+
     const filtered = getFilteredItems(todos, filter)
 
     return(
         <section className={styles.container}>
+        <button className={styles.reset} onClick={AllHandleDelete}>
+            <VscDebugRestart></VscDebugRestart>
+            </button>
         <ul className={styles.list}>
         {filtered.map((item)=>{return <Todo key={item.id} 
         todo={item} 

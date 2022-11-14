@@ -13,6 +13,7 @@
     flex: 1 0 auto;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .button{
@@ -24,6 +25,7 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .button:hover{
