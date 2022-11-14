@@ -1,10 +1,18 @@
+import { useEffect } from "react"
 import { useState } from "react"
-import AddTodo from "./AddTodo"
-import Todo from "./Todo"
+import AddTodo from "../AddTodo/AddTodo"
+import Todo from "../Todo/Todo"
+import styles from './TodoList.module.css'
 
 
 export default function TodoList({filter}){
-    const [todos, setTodos] = useState([{id:1, text:'장보기', status:'active'},{id:2, text:'공부하기', status:'active'}])
+    const [todos, setTodos] = useState(()=>{return readTodosFromLocalStorage()})
+
+    useEffect(()=>{
+        localStorage.setItem('todos',JSON.stringify(todos)) //setItem todos 키에 오브젝트를 저장
+    },[todos])
+
+
     const handleAdd = (todo)=>{
         //새로운 투두를 todos업데이트를 해야한다.
         setTodos((todos)=>{return [...todos, todo]})
@@ -21,8 +29,8 @@ export default function TodoList({filter}){
     const filtered = getFilteredItems(todos, filter)
 
     return(
-        <section className="App">
-        <ul>
+        <section className={styles.container}>
+        <ul className={styles.list}>
         {filtered.map((item)=>{return <Todo key={item.id} 
         todo={item} 
         onUpdate={handleUpdate} 
@@ -38,4 +46,10 @@ function getFilteredItems(todos,filter){
         return todos;
     }
     return todos.filter(todo => todo.status === filter)
+}
+
+function readTodosFromLocalStorage(){
+   
+    const todos = localStorage.getItem('todos')
+    return todos ? JSON.parse(todos) : []
 }
