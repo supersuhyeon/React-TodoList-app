@@ -40,17 +40,15 @@ React, PostCSS
 
 **2. Practice ReactHooks - useState, useContext for darkmode, useEffect**<br>
 
-- useContext
+- useContext<br>
   ![ezgif com-gif-maker (47)](https://user-images.githubusercontent.com/94214512/201830381-0617caf2-d760-45c7-ba4f-b73ced1cc833.gif) <br>
-
-Instead of prop drilling, it is good to use useContext for accessing global data and re-rendering when
-the global data changes.
-
-How to use
-
-1. Make a new file and create context
-2. Wrap child components in the context provider and supply the status value
-3. Use the useContext hook in a child component
+  Instead of prop drilling, it is good to use useContext for accessing global data and re-rendering when
+  the global data changes. <br>
+  <br>
+  How to use<br>
+  1)Make a new file and create context<br>
+  2)Wrap child components in the context provider and supply the status value<br>
+  3)Use the useContext hook in a child component<br>
 
 ```js
 //DarkModeContext.jsx
@@ -167,14 +165,13 @@ html.dark {
 }
 ```
 
-- useEffect
+- useEffect <br>
+  Create lifecycle methods using useEffect
 
-Create lifecycle methods using useEffect
-
-1. If there is no second parameter then the callback function will render whenever the component renders
-2. If there is a second parameter [state], useEffect's callback function will render once after the component is mounted and whenever [state] updates
-3. If there is a second parameter within the empty array, useEffect's callback function will only render once when the component is mounted
-4. You can execute a function when the component is unmounted using return ()=>{}
+  1)If there is no second parameter then the callback function will render whenever the component renders<br>
+  2)If there is a second parameter [state], useEffect's callback function will render once after the component is mounted and whenever [state] updates<br>
+  3)If there is a second parameter within the empty array, useEffect's callback function will only render once when the component is mounted<br>
+  4)You can execute a function when the component is unmounted using return ()=>{}<br>
 
 ![ezgif com-gif-maker (48)](https://user-images.githubusercontent.com/94214512/201832811-9eb6eefa-22cb-4b99-b6d4-7a3afab52368.gif)
 
