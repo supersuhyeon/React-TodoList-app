@@ -20,6 +20,8 @@ React, PostCSS
 ### Features
 
 **1. Build components**
+<br>
+<br>
 ![reactcomponents](https://user-images.githubusercontent.com/94214512/201803025-47f8104a-6adc-4ac6-a294-b1ef111d0255.png)<br>
 
 1. 3 filter states :
@@ -40,15 +42,16 @@ React, PostCSS
 
 **2. Practice ReactHooks - useState, useContext for darkmode, useEffect**<br>
 
-- useContext<br>
-  ![ezgif com-gif-maker (47)](https://user-images.githubusercontent.com/94214512/201830381-0617caf2-d760-45c7-ba4f-b73ced1cc833.gif) <br>
-  Instead of prop drilling, it is good to use useContext for accessing global data and re-rendering when
-  the global data changes. <br>
-  <br>
-  How to use<br>
-  1)Make a new file and create context<br>
-  2)Wrap child components in the context provider and supply the status value<br>
-  3)Use the useContext hook in a child component<br>
+**- useContext**<br>
+![ezgif com-gif-maker (47)](https://user-images.githubusercontent.com/94214512/201830381-0617caf2-d760-45c7-ba4f-b73ced1cc833.gif) <br>
+Instead of prop drilling, it is good to use useContext for accessing global data and re-rendering when
+the global data changes. <br>
+<br>
+How to use<br>
+
+1. Make a new file and create context<br>
+2. Wrap child components in the context provider and supply the status value<br>
+3. Use the useContext hook in a child component<br>
 
 ```js
 //DarkModeContext.jsx
@@ -165,13 +168,13 @@ html.dark {
 }
 ```
 
-- useEffect <br>
-  Create lifecycle methods using useEffect
+**- useEffect** <br>
+Create lifecycle methods using useEffect
 
-  1)If there is no second parameter then the callback function will render whenever the component renders<br>
-  2)If there is a second parameter [state], useEffect's callback function will render once after the component is mounted and whenever [state] updates<br>
-  3)If there is a second parameter within the empty array, useEffect's callback function will only render once when the component is mounted<br>
-  4)You can execute a function when the component is unmounted using return ()=>{}<br>
+1. If there is no second parameter then the callback function will render whenever the component renders<br>
+2. If there is a second parameter [state], useEffect's callback function will render once after the component is mounted and whenever [state] updates<br>
+3. If there is a second parameter within the empty array, useEffect's callback function will only render once when the component is mounted<br>
+4. You can execute a function when the component is unmounted using return ()=>{}<br>
 
 ![ezgif com-gif-maker (48)](https://user-images.githubusercontent.com/94214512/201832811-9eb6eefa-22cb-4b99-b6d4-7a3afab52368.gif)
 
@@ -183,7 +186,7 @@ useEffect(() => {
 
 By using useEffect, users can automatically see the latest list that they added without having to manually scroll to the end.
 <br>
-
+<br>
 **3. Use PostCSS** <br>
 I have used different CSS libraries across several projects such as PostCSS, styled-components, and tailwindCSS. These are some of my personal observations. <br>
 
@@ -194,7 +197,7 @@ I have used different CSS libraries across several projects such as PostCSS, sty
 | Tailwind          | pure CSS  | use anywhere, well-organized design system, good for a personal project | styling and HTML are mixed                                         |
 
 After I used these 3 different CSS libraries, I believe that PostCSS is great for all projects and easy to approach. Tailwind took me some time to understand how to use but I think that it would be good for personal projects or small projects because they can be finished faster due to the organized design system. It was convenient to use styled components because I don't have to go back and forth between different files but I'm worried about performance due to recompiling at runtime. I will use Tailwind for the next project <br>
-
+<br>
 **4. Save data in Local storage**<br>
 When we use window.localStorage, we can save the key-value across browser sessions.
 This means that when the user clicks the refresh button, the data that the user inputs will be saved.
