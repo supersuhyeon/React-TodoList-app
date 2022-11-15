@@ -12,7 +12,7 @@ export function DarkModeProvider({children}){
     }
 
     //로컬스토리지 데이터 읽어오기
-    useEffect(()=>{
+    useEffect(()=>{ //boolean
         const isDark = 
         localStorage.theme === 'dark' || 
         (!('theme' in localStorage) && 
@@ -35,5 +35,4 @@ function updateDarkMode(darkMode){
         localStorage.theme = 'light'
     }
 }
-
 export const useDarkMode = ()=> useContext(DarkModeContext)
